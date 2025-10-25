@@ -63,6 +63,7 @@ server.registerResource(
   async (uri, { id }) => {
     const baseUrl = process.env.MASCARIN_API_URL || "http://localhost:3333";
     const response = await fetch(`${baseUrl}/api/events/${id}`);
+
     const event = await response.json();
     return {
       contents: [
@@ -77,44 +78,6 @@ server.registerResource(
     };
   }
 );
-
-// server.registerResource(
-//   "event_detail",
-//   new ResourceTemplate("event://{id}", { list: false }),
-//   {
-//     title: "Event Detail",
-//     description: "Detailed information about a specific Mascarin event",
-//   },
-// async (uri, { id }) => {
-// const baseUrl = process.env.MASCARIN_API_URL || "http://localhost:3333";
-// const response = await fetch(`${baseUrl}/api/events/${id}`);
-
-//   if (!response.ok) {
-//     return {
-//       contents: [
-//         {
-//           type: "text",
-//           text: `Error: failed to fetch event ${id} (${response.status})`,
-//         },
-//       ],
-//     };
-//   }
-
-//   const event = await response.json();
-
-//     return {
-//       contents: [
-//         {
-//           type: "text",
-//           text: `Event: ${event.title}\nLocation: ${
-//             event.location?.city
-//           }\n\n${JSON.stringify(event, null, 2)}`,
-//         },
-//       ],
-//       structuredContent: event,
-//     };
-//   }
-// );
 
 // Set up Express and HTTP transport
 const app = express();
