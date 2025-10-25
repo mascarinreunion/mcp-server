@@ -2,6 +2,24 @@
 	"name": "@mascarin/mcp-server",
 	"version": "1.0.0",
 	"type": "module",
+	"description": "MCP server for Mascarin API - provides tools to fetch events and explore listings",
+	"main": "dist/server.js",
+	"bin": {
+		"mascarin-mcp": "dist/server.js"
+	},
+	"files": [
+		"dist/"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mascarin/mcp-server.git"
+	},
+	"keywords": ["mcp", "mascarin", "events", "listings", "model-context-protocol"],
+	"author": "Mascarin",
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
 	"dependencies": {
 		"@modelcontextprotocol/sdk": "^1.20.2",
 		"dotenv": "^17.2.3",
@@ -11,6 +29,8 @@
 	"scripts": {
 		"dev": "tsx --watch src/server.ts",
 		"start": "tsx src/server.ts",
+		"build": "tsc",
+		"prepublishOnly": "npm run build",
 		"inspect": "pnpx @modelcontextprotocol/inspector http://localhost:3001/mcp"
 	},
 	"devDependencies": {
