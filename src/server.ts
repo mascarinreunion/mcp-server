@@ -36,7 +36,7 @@ app.post("/", async (req, res) => {
   await transport.handleRequest(req, res, req.body);
 });
 
-const port = parseInt(process.env.MCP_PORT || process.env.PORT || "3001");
+const port = parseInt(process.env.PORT || "8080");
 app
   .listen(port, () => {
     console.log(`Mascarin MCP Server running on http://localhost:${port}/`);
