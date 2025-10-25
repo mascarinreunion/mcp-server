@@ -1,6 +1,0 @@
-packages:
-  - "server"
-  - "ui"
-
-onlyBuiltDependencies:
-  - esbuild

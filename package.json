@@ -1,17 +1,22 @@
 {
-	"name": "@mascarin/mcp",
+	"name": "@mascarin/mcp-server",
 	"version": "1.0.0",
-	"private": true,
 	"type": "module",
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "^1.20.2",
+		"dotenv": "^17.2.3",
+		"express": "^5.1.0",
+		"zod": "^3.25.76"
+	},
 	"scripts": {
-		"dev": "pnpm --parallel run dev",
-		"dev:server": "pnpm --filter @mascarin/mcp-server run dev",
-		"dev:ui": "pnpm --filter @mascarin/mcp-ui run dev",
-		"build": "pnpm --filter @mascarin/mcp-server run build && pnpm --filter @mascarin/mcp-ui run build",
-		"start": "pnpm --filter @mascarin/mcp-server run start",
-		"inspect": "pnpm --filter @mascarin/mcp-server run inspect"
+		"dev": "tsx --watch src/server.ts",
+		"start": "tsx src/server.ts",
+		"inspect": "pnpx @modelcontextprotocol/inspector http://localhost:3001/mcp"
 	},
 	"devDependencies": {
+		"@types/express": "^5.0.4",
+		"@types/node": "^24.9.1",
+		"tsx": "^4.20.6",
 		"typescript": "^5.9.3"
 	}
 }
