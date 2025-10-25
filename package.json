@@ -12,7 +12,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/mascarin/mcp-server.git"
+		"url": "https://github.com/mascarinreunion/mcp-server.git"
 	},
 	"keywords": ["mcp", "mascarin", "events", "listings", "model-context-protocol"],
 	"author": "Mascarin",
